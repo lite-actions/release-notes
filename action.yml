@@ -1,0 +1,56 @@
+name: Release Notes Generator
+description: >-
+  Generate abbreviated release notes (BREAKING / feat / fix since the last
+  release) from Conventional Commits, in pure shell.
+author: mrdoodles
+
+branding:
+  icon: file-text
+  color: blue
+
+inputs:
+  title:
+    description: Heading title for the notes. Defaults to the repository name.
+    required: false
+    default: ""
+  from:
+    description: Base ref/commit for the range. Defaults to the latest vX.Y.Z tag.
+    required: false
+    default: ""
+  to:
+    description: Head ref/commit for the range. Defaults to HEAD.
+    required: false
+    default: ""
+  version:
+    description: Explicit version, e.g. 1.2.0. Defaults to a computed bump.
+    required: false
+    default: ""
+  output-file:
+    description: File to write the notes to.
+    required: false
+    default: "RELEASE_NOTES.md"
+
+outputs:
+  version:
+    description: The release version used in the notes.
+    value: ${{ steps.gen.outputs.version }}
+  file:
+    description: The path the notes were written to.
+    value: ${{ steps.gen.outputs.file }}
+  changed:
+    description: "true if there were any BREAKING / feat / fix commits."
+    value: ${{ steps.gen.outputs.changed }}
+
+runs:
+  using: composite
+  steps:
+    - id: gen
+      shell: bash
+      env:
+        INPUT_TITLE: ${{ inputs.title }}
+        INPUT_FROM: ${{ inputs.from }}
+        INPUT_TO: ${{ inputs.to }}
+        INPUT_VERSION: ${{ inputs.version }}
+        INPUT_OUTPUT_FILE: ${{ inputs.output-file }}
+        GITHUB_REPO: ${{ github.repository }}
+      run: bash "${GITHUB_ACTION_PATH}/scripts/generate.sh"
