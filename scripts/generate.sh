@@ -56,20 +56,20 @@ while IFS= read -r sha; do
   [ -n "${sha}" ] || continue
   subject="$(git log -1 --format=%s "${sha}")"
   body="$(git log -1 --format=%b "${sha}")"
-  short="$(git rev-parse --short "${sha}")"
   desc="$(printf '%s' "${subject}" | sed -E 's/^[a-z]+(\([^)]+\))?!?:[[:space:]]*//')"
   type="${subject%%[(:!]*}"
 
+  # Release notes are for end users; commit SHAs are intentionally omitted.
   if printf '%s' "${subject}" | grep -Eq '^[a-z]+(\([^)]+\))?!:' \
      || printf '%s' "${body}" | grep -Eq '^(BREAKING[ ]CHANGE|BREAKING-CHANGE):'; then
     bc="$(printf '%s' "${body}" | sed -n -E 's/^(BREAKING[ ]CHANGE|BREAKING-CHANGE):[[:space:]]*(.*)/\2/p' | head -n1)"
     [ -n "${bc}" ] || bc="${desc}"
-    breaks+=("- ${bc} (${short})")
+    breaks+=("- ${bc}")
   fi
 
   case "${type}" in
-    feat) feats+=("- ${desc} (${short})") ;;
-    fix)  fixes+=("- ${desc} (${short})") ;;
+    feat) feats+=("- ${desc}") ;;
+    fix)  fixes+=("- ${desc}") ;;
   esac
 done <<< "${commits}"
 

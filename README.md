@@ -58,13 +58,13 @@ When `version` is not given, it is computed from the commits since the last
 
 **⚠ BREAKING CHANGES**
 
-- node 18 is now required (4882058)
+- node 18 is now required
 
 ### Features
 
-- add sso login (308da4d)
+- add sso login
 
 ### Fixes
 
-- handle empty payload (b98e94c)
+- handle empty payload
 ```
