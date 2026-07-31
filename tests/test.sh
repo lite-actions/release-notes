@@ -54,6 +54,13 @@ grep -q 'docs: tweak readme' RELEASE_NOTES.md && echo "  FAIL - docs leaked in" 
 awk '/BREAKING CHANGES/{b=NR} /### Features/{f=NR} /### Fixes/{x=NR} END{exit !(b<f && f<x)}' RELEASE_NOTES.md
 check "order is BREAKING -> Features -> Fixes" $?
 
+# Release notes must NOT contain commit SHAs.
+if grep -qE '\([0-9a-f]{7,}\)' RELEASE_NOTES.md; then
+  check "no commit SHAs in release notes" 1
+else
+  check "no commit SHAs in release notes" 0
+fi
+
 # version output
 grep -q '^version=2.0.0$' "${GITHUB_OUTPUT}"; check "emits version=2.0.0" $?
 
