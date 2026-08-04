@@ -1,4 +1,4 @@
-name: Release Notes Generator
+name: Conventional Release Notes Generator
 description: >-
   Generate abbreviated release notes (BREAKING / feat / fix since the last
   release) from Conventional Commits, in pure shell.
