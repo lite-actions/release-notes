@@ -2,8 +2,8 @@
 
 Deferred until **after** this action is published to the GitHub Marketplace:
 
-- [ ] Add automated **changelog** generation (maintain `CHANGELOG.md` on merge to
-      `main`), mirroring the setup in `mrdoodles/versioning-tests`.
+- [ ] Add automated **changelog** generation (maintain `CHANGELOG.md` on merge
+      to `main`), mirroring the setup in `lite-actions/versioning-tests`.
 - [ ] Add automated **release notes** (`RELEASE_NOTES.md`) by dogfooding this
       action.
 
