@@ -69,8 +69,12 @@ INPUT_TITLE="My Project" GITHUB_REPO="owner/repo" bash scripts/generate.sh && ca
 
 ## Conventions
 
-- Public, **unprotected** repo — push docs/fixes to `main` directly; workflow-
-  file changes need a `workflow`-scoped token.
+- Public repo with a **protected `main`** — all changes go via PR. Required
+  checks are `validate`, `lint` and `test`; `enforce_admins` is on, one
+  approving review is needed, and `require_last_push_approval` means the last
+  pusher cannot self-approve (use the `MrDClaudeBot` identity). `main` also
+  **requires signed commits**, so rebase merges are rejected — GitHub cannot
+  sign them; merge or squash instead.
 - Conventional Commits for messages; co-authored commits use the bot identity:
   `Co-Authored-By: Claude <309050497+MrDClaudeBot@users.noreply.github.com>`.
 - **Never use `git worktree`.** Work in the clone directly, or push a branch and
