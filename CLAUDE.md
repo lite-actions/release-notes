@@ -73,5 +73,9 @@ INPUT_TITLE="My Project" GITHUB_REPO="owner/repo" bash scripts/generate.sh && ca
   file changes need a `workflow`-scoped token.
 - Conventional Commits for messages; co-authored commits use the bot identity:
   `Co-Authored-By: Claude <309050497+MrDClaudeBot@users.noreply.github.com>`.
+- **Never use `git worktree`.** Work in the clone directly, or push a branch and
+  use a fresh clone. If a branch is already checked out elsewhere and `git
+  switch` refuses it, do not reach for a worktree — push from the current branch
+  with `git push origin HEAD:<branch>` instead.
 - **`TODO.md`** tracks deferred work: add changelog + release-notes automation to
   this repo *after* it's published to the Marketplace.
