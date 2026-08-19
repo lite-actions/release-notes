@@ -2,5 +2,7 @@
 
 ## v1.0.3
 
-_No user-facing changes since v1.0.2._
+### Fixes
+
+- stop the suite failing when commit signing is enabled
 
