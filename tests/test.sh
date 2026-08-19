@@ -20,6 +20,13 @@ cd "${tmp}" || exit 1
 git init -q
 git config user.email test@example.com
 git config user.name test
+# The scratch repo inherits global config. With commit.gpgsign / tag.gpgsign
+# set, `git tag v1.4.0` below becomes a signed annotated tag with no message
+# and dies with "fatal: no tag message?", so the baseline tag never exists and
+# the version assertions fail. main requires signed commits, so every
+# contributor has signing configured - this would fail for all of them.
+git config commit.gpgsign false
+git config tag.gpgsign false
 
 export GITHUB_OUTPUT="${tmp}/out"
 export GITHUB_REPO="acme/widget"
@@ -36,7 +43,7 @@ refactor!: drop node 16
 BREAKING CHANGE: node 18 is now required
 EOF
 
-bash "${GEN}" >/dev/null 2>&1
+bash "${GEN}" >/dev/null
 notes="$(cat RELEASE_NOTES.md)"
 echo "----- generated RELEASE_NOTES.md -----"; echo "${notes}"; echo "--------------------------------------"
 
