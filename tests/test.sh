@@ -71,6 +71,19 @@ fi
 # version output
 grep -q '^version=2.0.0$' "${GITHUB_OUTPUT}"; check "emits version=2.0.0" $?
 
+# A newline in an output value would inject step outputs the action never
+# declared. INPUT_VERSION is the reachable path; it must be refused, and nothing
+# at all should be written.
+inj_out="${tmp}/inject-out"
+: > "${inj_out}"
+if GITHUB_OUTPUT="${inj_out}" INPUT_VERSION="$(printf '1.0.0\nmalicious=true')" \
+     bash "${GEN}" >/dev/null 2>&1; then
+  check "multi-line INPUT_VERSION is refused" 1
+else
+  check "multi-line INPUT_VERSION is refused" 0
+fi
+grep -q '^malicious=' "${inj_out}" && check "no injected output key" 1 || check "no injected output key" 0
+
 echo
 echo "passed: ${pass}, failed: ${fail}"
 [ "${fail}" -eq 0 ]

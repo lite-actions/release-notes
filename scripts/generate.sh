@@ -18,7 +18,25 @@
 set -euo pipefail
 
 : "${GITHUB_OUTPUT:=/dev/stdout}"
-emit() { printf '%s=%s\n' "$1" "$2" >> "${GITHUB_OUTPUT}"; }
+
+# A newline in a value would start a new "key=value" line and inject step
+# outputs the action never declared. None of the outputs here is ever
+# legitimately multi-line - a version, a file path and a boolean - so a newline
+# is always a bug in the caller's inputs, and failing is more useful than
+# accepting it.
+#
+# Rejecting rather than using the "key<<DELIM" heredoc form on purpose: a fixed
+# delimiter is itself escapable by a value containing that same string, and a
+# random one is only worth the machinery when multi-line values are wanted.
+emit() {
+  case "$2" in
+    *$'\n'*)
+      echo "error: refusing to write a multi-line value to GITHUB_OUTPUT (${1})" >&2
+      exit 1
+      ;;
+  esac
+  printf '%s=%s\n' "$1" "$2" >> "${GITHUB_OUTPUT}"
+}
 
 TITLE="${INPUT_TITLE:-}"
 if [ -z "${TITLE}" ]; then
