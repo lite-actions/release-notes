@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([27003ee](https://github.com/lite-actions/release-notes/commit/27003eed7dcd722bf62830891b351a09ec2099f4))
+
+### Other Changes
+
+- adopt common-workflows for test and validation ([f84d02e](https://github.com/lite-actions/release-notes/commit/f84d02e56636cd6bdb9096205249beea8bfea137))
+
 ## 2026-08-20 ([0cf4340](https://github.com/lite-actions/release-notes/commit/0cf4340265196f454f4f61ce931f5888b34fd1ff))
 
 ### Other Changes
