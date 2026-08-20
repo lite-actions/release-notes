@@ -1,8 +1,6 @@
 # release-notes
 
-## v1.0.4
+## v1.0.5
 
-### Fixes
-
-- refuse to write multi-line values to GITHUB_OUTPUT
+_No user-facing changes since v1.0.4._
 
