@@ -36,6 +36,13 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      # Dogfooding: this repo runs its own action from the working tree, so a
+      # regression on main shows up here first. Consumers use @v1.
+      #
+      # Deliberately NOT migrated to common-workflows/release: inside a shared
+      # action `./` would resolve to that action's repository, not this one, so
+      # the release would be cut by the last release rather than the code being
+      # released. Same reason changelog.yml keeps its local definition.
       - name: Generate release notes
         id: notes
         uses: ./
