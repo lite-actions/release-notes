@@ -3,6 +3,14 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([33003b4](https://github.com/lite-actions/release-notes/commit/33003b4414a9bd4131e2fc0ccf6bdbce43c2d7fa))
+
+### Other Changes
+
+- stop installing shellcheck, it ships on the runner ([a6b56aa](https://github.com/lite-actions/release-notes/commit/a6b56aa0e017f3c11527a4597406686057edd48f))
+- point action references at the lite-actions org ([1db08c9](https://github.com/lite-actions/release-notes/commit/1db08c958e3f98b5a9e4edb679b9db86957b97e4))
+- remove the Slack notify step from lint ([d0a02b7](https://github.com/lite-actions/release-notes/commit/d0a02b74d8df8b893327d69c6308b293464e654a))
+
 ## 2026-08-19 ([ebce0d3](https://github.com/lite-actions/release-notes/commit/ebce0d31af3d0d6f84a2b58dc1b7369e99a71dae))
 
 ### Bug Fixes
