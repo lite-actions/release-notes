@@ -36,18 +36,16 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      # Dogfooding: this repo runs its own action from the working tree, so a
-      # regression on main shows up here first. Consumers use @v1.
+      # This repo IS release-notes, so it generates its notes from the working
+      # tree. A regression in generate.sh surfaces here before it ships;
+      # consumers get @v1.
       #
-      # Deliberately NOT migrated to common-workflows/publish. That action
-      # calls lite-actions/release-notes@v1, so this repo would generate its
-      # own notes with the *previously published* version of itself rather
-      # than the version being released - a regression in generate.sh would
-      # be invisible here and ship anyway.
-      #
-      # Only this step is affected: the tagging and GitHub Release that the
-      # shared action performs are generic. It is the notes generation that
-      # has to stay local, for the same reason as changelog.yml.
+      # That is also why this step cannot come from common-workflows, which
+      # hardcodes lite-actions/release-notes@v1. Expressions are not allowed in
+      # `uses:`, so no input can point it at `./` instead. The conflict is with
+      # the release-notes dependency - the tagging and GitHub Release around it
+      # are generic, and duplicating them here is a known cost, tracked
+      # separately.
       - name: Generate release notes
         id: notes
         uses: ./
