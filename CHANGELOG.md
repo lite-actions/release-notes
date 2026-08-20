@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([0cf4340](https://github.com/lite-actions/release-notes/commit/0cf4340265196f454f4f61ce931f5888b34fd1ff))
+
+### Other Changes
+
+- use the shared shell-lint action ([c37bbf3](https://github.com/lite-actions/release-notes/commit/c37bbf3708febfb1d4066a150072f32c7cbcfa97))
+
 ## 2026-08-20 ([4279feb](https://github.com/lite-actions/release-notes/commit/4279feb212be2351d4529567244f8647327f500a))
 
 ### Other Changes
