@@ -39,10 +39,15 @@ jobs:
       # Dogfooding: this repo runs its own action from the working tree, so a
       # regression on main shows up here first. Consumers use @v1.
       #
-      # Deliberately NOT migrated to common-workflows/release: inside a shared
-      # action `./` would resolve to that action's repository, not this one, so
-      # the release would be cut by the last release rather than the code being
-      # released. Same reason changelog.yml keeps its local definition.
+      # Deliberately NOT migrated to common-workflows/release. That action
+      # calls lite-actions/release-notes@v1, so this repo would generate its
+      # own notes with the *previously published* version of itself rather
+      # than the version being released - a regression in generate.sh would
+      # be invisible here and ship anyway.
+      #
+      # Only this step is affected: the tagging and GitHub Release that the
+      # shared action performs are generic. It is the notes generation that
+      # has to stay local, for the same reason as changelog.yml.
       - name: Generate release notes
         id: notes
         uses: ./
