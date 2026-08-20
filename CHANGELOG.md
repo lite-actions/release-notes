@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([bc87d4e](https://github.com/lite-actions/release-notes/commit/bc87d4e5aba7e6416d909070a1f4d490f696abee))
+
+### Other Changes
+
+- releases are cut by release.yml, never the web UI ([a919889](https://github.com/lite-actions/release-notes/commit/a919889fa6ccb816fd09cdfb92dd4880558278a2))
+
 ## 2026-08-20 ([cb72a0a](https://github.com/lite-actions/release-notes/commit/cb72a0a3ab68c3e570d3ca1d03ce1eed32350f48))
 
 ### Bug Fixes
