@@ -3,6 +3,14 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([a1ee4c6](https://github.com/lite-actions/release-notes/commit/a1ee4c6521d29582c134c5b48923c643e420905f))
+
+### Other Changes
+
+- rename release.yml to publish.yml ([2227d1e](https://github.com/lite-actions/release-notes/commit/2227d1ec20de917976862340590e17e9e9af38ca))
+- state the dogfooding reason precisely ([375a5ee](https://github.com/lite-actions/release-notes/commit/375a5eeee54b01a19dcf7bd9e0ea6c0c8e15db66))
+- say why release.yml keeps its local definition ([7c26da2](https://github.com/lite-actions/release-notes/commit/7c26da2e16713a0a40ff82dda8c55bb0da3e03c8))
+
 ## 2026-08-20 ([27003ee](https://github.com/lite-actions/release-notes/commit/27003eed7dcd722bf62830891b351a09ec2099f4))
 
 ### Other Changes
