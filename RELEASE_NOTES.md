@@ -1,8 +1,6 @@
 # release-notes
 
-## v1.0.3
+## v1.0.4
 
-### Fixes
-
-- stop the suite failing when commit signing is enabled
+_No user-facing changes since v1.0.3._
 
