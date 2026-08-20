@@ -1,6 +1,6 @@
-name: Release
+name: Publish
 
-# Manual release for the action: generate notes from BREAKING/feat/fix commits
+# Manual publish for the action: generate notes from BREAKING/feat/fix commits
 # since the last release, tag vX.Y.Z, move the vN major tag, and publish a
 # GitHub Release. Tags are not branch-protected, so no PR/approval dance needed.
 on:
@@ -23,7 +23,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: release
+  group: publish
   cancel-in-progress: false
 
 jobs:
@@ -36,6 +36,18 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      # Dogfooding: this repo runs its own action from the working tree, so a
+      # regression on main shows up here first. Consumers use @v1.
+      #
+      # Deliberately NOT migrated to common-workflows/release. That action
+      # calls lite-actions/release-notes@v1, so this repo would generate its
+      # own notes with the *previously published* version of itself rather
+      # than the version being released - a regression in generate.sh would
+      # be invisible here and ship anyway.
+      #
+      # Only this step is affected: the tagging and GitHub Release that the
+      # shared action performs are generic. It is the notes generation that
+      # has to stay local, for the same reason as changelog.yml.
       - name: Generate release notes
         id: notes
         uses: ./
