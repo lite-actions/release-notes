@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([4279feb](https://github.com/lite-actions/release-notes/commit/4279feb212be2351d4529567244f8647327f500a))
+
+### Other Changes
+
+- use the signed-commit action instead of an inline API call ([8fcdae5](https://github.com/lite-actions/release-notes/commit/8fcdae5fdf8612745b573f571eb5f3f5a7b1b461))
+
 ## 2026-08-20 ([bc87d4e](https://github.com/lite-actions/release-notes/commit/bc87d4e5aba7e6416d909070a1f4d490f696abee))
 
 ### Other Changes
