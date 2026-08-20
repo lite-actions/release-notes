@@ -3,6 +3,13 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([6fcc53c](https://github.com/lite-actions/release-notes/commit/6fcc53cca14f04fd6406ba31b4b180f1774cda10))
+
+### Other Changes
+
+- describe the step as release-notes, not as publishing ([12c50ff](https://github.com/lite-actions/release-notes/commit/12c50ff337e2ace422d15367312d724b074850a5))
+- correct the shared action name in the comment ([0bb4f7b](https://github.com/lite-actions/release-notes/commit/0bb4f7b345c38fc8bb7d78cb9dc532d39dbac9b5))
+
 ## 2026-08-20 ([a1ee4c6](https://github.com/lite-actions/release-notes/commit/a1ee4c6521d29582c134c5b48923c643e420905f))
 
 ### Other Changes
