@@ -39,7 +39,7 @@ jobs:
       # Dogfooding: this repo runs its own action from the working tree, so a
       # regression on main shows up here first. Consumers use @v1.
       #
-      # Deliberately NOT migrated to common-workflows/release. That action
+      # Deliberately NOT migrated to common-workflows/publish. That action
       # calls lite-actions/release-notes@v1, so this repo would generate its
       # own notes with the *previously published* version of itself rather
       # than the version being released - a regression in generate.sh would
