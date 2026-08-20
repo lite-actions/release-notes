@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-20 ([cb72a0a](https://github.com/lite-actions/release-notes/commit/cb72a0a3ab68c3e570d3ca1d03ce1eed32350f48))
+
+### Bug Fixes
+
+- refuse to write multi-line values to GITHUB_OUTPUT ([8d74218](https://github.com/lite-actions/release-notes/commit/8d74218e5aff1d737f6ce6109db81d98ae5a5562))
+
 ## 2026-08-20 ([33003b4](https://github.com/lite-actions/release-notes/commit/33003b4414a9bd4131e2fc0ccf6bdbce43c2d7fa))
 
 ### Other Changes
