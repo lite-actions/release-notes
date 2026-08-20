@@ -38,7 +38,7 @@ jobs:
 
       - name: Update changelog
         id: changelog
-        uses: mrdoodles/conventional-changelog@v1
+        uses: lite-actions/conventional-changelog@v1
 
       # Dogfooding: this repo runs its own action from the working tree, so a
       # regression on main shows up here first. Consumers use @v1.
