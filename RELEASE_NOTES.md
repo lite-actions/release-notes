@@ -2,5 +2,7 @@
 
 ## v1.0.4
 
-_No user-facing changes since v1.0.3._
+### Fixes
+
+- refuse to write multi-line values to GITHUB_OUTPUT
 
