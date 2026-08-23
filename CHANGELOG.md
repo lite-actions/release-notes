@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-22 ([3d2abce](https://github.com/lite-actions/release-notes/commit/3d2abce23e32dbb868a944e11135e32166c9e12a))
+
+### Other Changes
+
+- pin git-checkout to a SHA in CI ([3b7a58c](https://github.com/lite-actions/release-notes/commit/3b7a58cc69d4f6ba9f0095a1a3a607ad5f7b3b1a))
+
 ## 2026-08-20 ([6fcc53c](https://github.com/lite-actions/release-notes/commit/6fcc53cca14f04fd6406ba31b4b180f1774cda10))
 
 ### Other Changes
