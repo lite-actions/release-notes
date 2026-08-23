@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-23 ([05bb8a5](https://github.com/lite-actions/release-notes/commit/05bb8a536fb36a3bcb8443359b4adb0bb2dc785a))
+
+### Other Changes
+
+- prohibit pull_request_target ([7c8b138](https://github.com/lite-actions/release-notes/commit/7c8b138ae5bd0aff7924f8e0a0780ac2afac0857))
+
 ## 2026-08-22 ([3d2abce](https://github.com/lite-actions/release-notes/commit/3d2abce23e32dbb868a944e11135e32166c9e12a))
 
 ### Other Changes
