@@ -3,6 +3,12 @@
 All notable changes to this project are documented in this file,
 grouped by push and referenced by short commit SHA.
 
+## 2026-08-25 ([c751296](https://github.com/lite-actions/release-notes/commit/c7512966c805f9750f253fba50159fecf33fae69))
+
+### Other Changes
+
+- point the shared workflow references at actions-workflows ([7a73f1a](https://github.com/lite-actions/release-notes/commit/7a73f1aeda091f6209230cdc22f5437e8aa807e3))
+
 ## 2026-08-23 ([05bb8a5](https://github.com/lite-actions/release-notes/commit/05bb8a536fb36a3bcb8443359b4adb0bb2dc785a))
 
 ### Other Changes
