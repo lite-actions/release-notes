@@ -40,7 +40,7 @@ jobs:
       # tree. A regression in generate.sh surfaces here before it ships;
       # consumers get @v1.
       #
-      # That is also why this step cannot come from common-workflows, which
+      # That is also why this step cannot come from actions-workflows, which
       # hardcodes lite-actions/release-notes@v1. Expressions are not allowed in
       # `uses:`, so no input can point it at `./` instead. The conflict is with
       # the release-notes dependency - the tagging and GitHub Release around it
